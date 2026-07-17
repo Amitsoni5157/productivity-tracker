@@ -1,0 +1,13 @@
+fastapi # For backend 
+uvicorn # For API server
+langchain # For LLM 
+langchain-community # For community tools 
+langchain-groq # For Groq API
+langgraph # For LangGraph
+python-dotenv # For environment variables
+pydantic # For data validation
+duckduckgo-search # For search engine
+wikipedia # For Wikipedia
+supabase # For database
+sentence-transformers # For embeddings
+langchain-huggingface # For HuggingFace 

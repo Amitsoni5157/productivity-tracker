@@ -1,0 +1,37 @@
+# --- Environment Variables (CRITICAL: Never leak your API keys) ---
+.env
+*.env
+
+# --- Python Virtual Environments ---
+venv/
+.venv/
+env/
+ENV/
+pyvenv.cfg
+
+# --- Vector Databases & Local Storage ---
+# Prevents uploading heavy local databases or cache
+.chroma/
+chroma_db/
+faiss_index/
+.pinecone/
+*vector_store*
+
+# --- Python Cache & Files ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# --- User Uploads / Data (Optional) ---
+# If you have a specific folder where you drop test PDFs, ignore it so you don't commit copyright data.
+data/
+pdfs/
+*.pdf
+
+# --- IDEs & OS Specific ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
