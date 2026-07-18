@@ -47,11 +47,11 @@ def api_create_profile(payload: profileRequest):
 # 3. Analyze Daily Log Endpoint (LangGraph Trigger)
 @app.post("/analyze")
 def api_analyze_log(payload: AnalyzeRequest):
-    # Check if profile exists in database
     profile = get_profile(payload.profile_id)
+    # Check if profile exists in database
     if not profile:
         raise HTTPException(status_code=404, detail="Profile not found in database.")
-        
+    # user valid hai  
     try:
         # LangGraph invoke() call (Hum notebook state me variables daal kar employee node trigger kar rahe hain)
         state_input = {

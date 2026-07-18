@@ -51,7 +51,8 @@ export default function Home() {
     setProfileLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8000/profile", {
+      // const res = await fetch("http://localhost:8000/profile", {
+      const res = await fetch(getApiUrl("/profile"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, profession }),
@@ -85,7 +86,8 @@ export default function Home() {
     setReport(null);
 
     try {
-      const res = await fetch("http://localhost:8000/analyze", {
+      // const res = await fetch("http://localhost:8000/analyze", {
+      const res = await fetch(getApiUrl("/analyze"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -116,6 +118,11 @@ export default function Home() {
     setRawLog("");
     setName("");
     setProfession("");
+  };
+
+  const getApiUrl = (path: string) => {
+    const hostname = typeof window !== "undefined" ? window.location.hostname : "localhost";
+    return `http://${hostname}:8000${path}`;
   };
 
   return (

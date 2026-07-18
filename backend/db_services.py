@@ -11,6 +11,7 @@ def create_profile(name: str, profession:str) -> dict:
 
     # Supabase execute() ke baad data attribute me list of inserted rows deta hai
     if response.data:
+        # Got Secret ID 
         return response.data[0]
     raise Exception("Failed to create profile.")
 
